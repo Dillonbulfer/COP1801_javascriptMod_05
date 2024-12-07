@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Week5 creating Objects</title>
+
+<script>
+//------------------------------------------------------------
+//first script to create the object of mydog. then an alert to 
+//display the information.
+//------------------------------------------------------------
+
+let mydog = {Breed:"Unknown", TVProgram:"Naruto", Name:"Akamaru", Note:"Kiba Inuzaka's ninja Dog", mySound:"My howl strikes fear into our opponents!"};
+
+alert("Hello, My name is " + mydog.Name + ", " + mydog.mySound + " I'm From the hit animated series Naruto. The breed of dog I am is " + mydog.Breed + " and I am " + mydog.Note)
+</script>
+
+<script>
+//------------------------------------------------------------
+//script for creating the secondary object called myDogConst.
+//------------------------------------------------------------
+
+function dog(breed, tvprogram, name, note, mysound, cantalk){
+	this.Breed = breed;
+	this.TVProgram = tvprogram;
+	this.Name = name;
+	this.Note = note;
+	this.mySound = mysound;
+	this.canTalk = cantalk
+	
+//method to print out information regarding the created object.
+//------------------------------------------------------------
+	dog.prototype.myGreeting = function(){
+		document.write("Hello, My name is " + this.Name + " I'm from the hit animated series " + this.TVProgram + "<br>");
+		document.write("My breed is " + this.Breed + " and I am " + this.Note + "<br>");
+		document.write("be carefull if you are against us, " + this.mySound + "<br>");
+		document.write("do I have the ability to speak?: " + this.canTalk);
+		
+	}
+}
+let myDogConst = new dog("unknown", "naruto", "Akamaru", "Kiba Inuzaka's ninja Dog", "My howl strikes fear into our opponents!", "false");
+
+
+//calling of the method to print to the page the information stored in the object.
+//------------------------------------------------------------
+myDogConst.myGreeting();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
